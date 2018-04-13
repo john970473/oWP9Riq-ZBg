@@ -10,8 +10,8 @@ var player;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
-    width: '640',
+    // height: '390',
+    // width: '640',
     videoId: 'oWP9Riq-ZBg',
     events: {
       // 'onReady': onPlayerReady,
@@ -45,8 +45,12 @@ function stopVideo() {
 
 function play_context_one(t,index){
     player.loadVideoById("oWP9Riq-ZBg", t,"large");
+    setTimeout(pauseVideo, transcript.data[index-1].d);
     for (var i=1 ; i<=10 ; i++){
       document.getElementById('ts'+ i).style.backgroundColor = "white";
     }
     document.getElementById('ts'+ index).style.backgroundColor = "lightgray";
+}
+function pauseVideo() {
+  player.pauseVideo();
 }
