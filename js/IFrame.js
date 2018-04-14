@@ -43,8 +43,8 @@ function stopVideo() {
   player.stopVideo();
 }
 
-function play_context_one(t,index){
-    player.loadVideoById("oWP9Riq-ZBg", t,"large");
+function play_context_one(index){
+    player.loadVideoById("oWP9Riq-ZBg", transcript.data[index-1].t/1000,"large");
     setTimeout(pauseVideo, transcript.data[index-1].d);
     for (var i=1 ; i<=10 ; i++){
       document.getElementById('ts'+ i).style.backgroundColor = "white";
